@@ -17,5 +17,5 @@ hl { { "Label", "TSLabel" } , fg="#cc6666" }
 ```
 
 # Sample
-[https://github.com/amirrezaask/dotfiles/blob/master/nvim/lua/colors/gruvbuddy.lua](gruvbuddy)
+[gruvbuddy](https://github.com/amirrezaask/dotfiles/blob/master/nvim/lua/colors/gruvbuddy.lua)
 
