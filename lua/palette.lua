@@ -62,5 +62,15 @@ highlight = setmetatable(highlight,{
 })
 
 return {
-  highlight = highlight
+  highlight = highlight,
+  styles = setmetatable({
+    italic = 'italic',
+    bold = 'bold',
+    underline = 'underline'
+  }, {
+      __newindex = function()
+        vim.api.nvim_err_writeln('cannot add style')
+        return
+      end
+    })
 }
