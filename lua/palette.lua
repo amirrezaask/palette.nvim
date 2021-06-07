@@ -61,16 +61,22 @@ highlight = setmetatable(highlight,{
   end
 })
 
+local function make_enum(opts)
+  return setmetatable(opts, {
+    __newindex = function()
+      vim.api.nvim_err_writeln('cannot add style')
+      return
+    end
+  })
+end
+
+local styles = make_enum {
+  italic = 'italic',
+  bold = 'bold',
+  underline = 'underline'
+}
+
 return {
   highlight = highlight,
-  styles = setmetatable({
-    italic = 'italic',
-    bold = 'bold',
-    underline = 'underline'
-  }, {
-      __newindex = function()
-        vim.api.nvim_err_writeln('cannot add style')
-        return
-      end
-    })
+  styles = styles
 }
